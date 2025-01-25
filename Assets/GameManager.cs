@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public float wood;
     public float steel;
     public float coal;
+    public float population;
+    public int populationCap;
 
 
     public GameObject parlor;
@@ -91,5 +93,12 @@ public class GameManager : MonoBehaviour
     public void Build()
     {
         tmm.PlaceBuilding(parlor);
+    }
+
+    public void ToBuild(string woo)
+    {
+        if (structure.isConditionMet(wood,steel)) {
+            tmm.PlaceBuilding(structure);
+        }
     }
 }
