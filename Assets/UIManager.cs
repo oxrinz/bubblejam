@@ -15,8 +15,13 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI positionText;
     public TextMeshProUGUI timeToNextBalloonText;
-
     public Button buildButton;
+
+    public TextMeshProUGUI waterText;
+    public TextMeshProUGUI foodText;
+    public TextMeshProUGUI woodText;
+    public TextMeshProUGUI steelText;
+    public TextMeshProUGUI coalText;
 
     public void SetSelectedTilePosition(int x, int y)
     {
@@ -25,10 +30,20 @@ public class UIManager : MonoBehaviour
 
     public void SetTimeToNextBalloon(float time)
     {
-        timeToNextBalloonText.text = "Time until balloon arrival: " + time.ToString("F1");;
+        timeToNextBalloonText.text = "Time until balloon arrival: " + time.ToString("F1"); ;
     }
 
-    public void BuildButton() {
+    public void BuildButton()
+    {
         GameManager.instance.Build();
+    }
+
+    public void UpdateResources(float water, float food, float wood, float steel, float coal)
+    {
+        waterText.text = "Water: " + Mathf.Floor(water).ToString();
+        foodText.text = "Food: " + Mathf.Floor(food).ToString();
+        woodText.text = "Wood: " + Mathf.Floor(wood).ToString();
+        steelText.text = "Steel: " + Mathf.Floor(steel).ToString();
+        coalText.text = "Coal: " + Mathf.Floor(coal).ToString();
     }
 }
