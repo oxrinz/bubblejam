@@ -69,9 +69,9 @@ public class GameManager : MonoBehaviour
             Vector2 worldPosition = GetMouseWorldPosition();
             Debug.Log(worldPosition);
 
-            Tile tile = tmm.GetTile((int)Mathf.Round(worldPosition.x), (int)Mathf.Round(worldPosition.y));
+            Tile tile = tmm.GetTile((int)Mathf.Floor(worldPosition.x), (int)Mathf.Floor(worldPosition.y));
 
-            uim.SetSelectedTilePosition(tile.x, tile.y);
+            uim.UpdateSelection(tile);
 
             tmm.SelectTile(tile);
         }

@@ -14,6 +14,8 @@ public class UIManager : MonoBehaviour
     }
 
     public TextMeshProUGUI positionText;
+    public TextMeshProUGUI typeText;
+
     public TextMeshProUGUI timeToNextBalloonText;
     public Button buildButton;
 
@@ -22,6 +24,11 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI woodText;
     public TextMeshProUGUI steelText;
     public TextMeshProUGUI coalText;
+
+    public void UpdateSelection(Tile tile) {
+        positionText.text = tile.x.ToString() + ", " + tile.y.ToString();
+        typeText.text = tile.type.ToString() + " : " + tile.resourceType.ToString();
+    }
 
     public void SetSelectedTilePosition(int x, int y)
     {
