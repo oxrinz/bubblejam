@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Building : MonoBehaviour
 {
+    public GameObject buildingPrefab;
     // Start is called before the first frame update
     void Start()
     {
