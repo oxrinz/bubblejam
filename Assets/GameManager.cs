@@ -15,6 +15,12 @@ public class GameManager : MonoBehaviour
     public float timeToNextAirBalloon;
 
 
+    public float wood;
+    public float steel;
+    public float food;
+    public float water;
+    
+
     public GameObject parlor;
     UIManager uim;
     TileMapManager tmm;
