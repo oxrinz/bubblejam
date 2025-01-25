@@ -15,11 +15,12 @@ public class GameManager : MonoBehaviour
     public float timeToNextAirBalloon;
 
 
+    public float water;
+    public float food;
     public float wood;
     public float steel;
-    public float food;
-    public float water;
-    
+    public float coal;
+
 
     public GameObject parlor;
     UIManager uim;
@@ -52,6 +53,11 @@ public class GameManager : MonoBehaviour
 
     void HandleMouseInput()
     {
+        // ui updates
+        uim.UpdateResources(water, food, wood, steel, coal);
+
+
+        // mouse shit
         if (Input.GetMouseButtonDown(0))
         {
             // check to see if mouse is over a ui(?) element it's weird
